@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAGENS RICK AND MORTY</title>
+</head>
+<body>
+    <h1>Todos os personagens de Rick & Morty</h1>
+    
+    <div>
+        {% for personagem in personagens %}
+        <h2>{{ personagem["nome"] }}</h2>
+        <ul>
+            <li>Status: {{ personagem["status"] }}</li>
+            <li>Espécie: {{ personagem["especies"] }}</li>
+            <li>Gênero: {{ personagem["genero"] }}</li>
+            <li>Origem: {{ personagem["origem"]["nome"] }}</li>
+            <li>Localização: {{ personagem["localizacao"] }}</li>
+            <li>Quantidade de Episódios: {{ personagem["quant_ep"] }}</li>
+        </ul>
+        <img src="{{ personagem['imagem'] }}" alt="Imagem {{ personagem['nome'] }}">
+        <br><br><br>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

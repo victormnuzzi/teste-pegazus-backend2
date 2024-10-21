@@ -1,0 +1,51 @@
+Teste back-end Nível 2
+
+Esse teste tem o objetivo de testar suas habilidades em diferentes implementações do backend
+
+ESTÃO PERMITIDAS CONSULTAS NO GOOGLE OU YOUTUBE, MAS O CHAT GPT ESTA COMPLETAMENTE PROIBIDO, SABEMOS QUE É POSSÍVEL QUE NÃO LEMBRE DE ALGO E PRECISE RELEMBRAR, MAS O CHAT-GPT ESTA PROIBIDO DEVIDO A SUA INCRÍVEL CAPACIDADE DE GERAR CODIGO FUNCIONAL. SE ESTIVER COM DUVIDA, PESQUISE, MAS NÃO UTILIZE INTELIGÊNCIA ARTIFICIAL, ASSIM, PODEREMOS AVALIA-LO DA MELHOR FORMA, E EVITAR TRANSTORNOS NO DECORRER DO PROCESSO SELETIVO, OBRIGADO.
+
+Tecnologias a serem utilizadas:
+- Python
+- Flask
+- Banco de dados(preferencialmente SQL)
+- ORM(Opcional)
+- Jinja2 ou Javascript para a redenrização da pagina HTML
+
+CREDENCIAIS DO BANCO DE DADOS REMOTO:
+    host='192.168.1.12',      # O endereço IP do servidor MySQL
+    user='myuser',         # nome de usuário do MySQL
+    password='123456',       #senha do MySQL
+    database='rm'    # Nome do banco de dados que deve ser utilizado no teste(DB já criado, mas sem tabelas)
+
+Api a ser consumida:
+https://rickandmortyapi.com/ 
+Objetivo:
+Você deverá desenvolver uma api REST com python e flask que possua dois endpoints:
+Endpoint 1 “/“: faz a requisição no endpoint https://rickandmortyapi.com/api/character. Sendo obrigatório o uso de paginação para a extração de todos os personagens
+E recebe a resposta json. com ela, voce deverá realizar o parsing de dados e extrair os seguintes dados de CADA personagem:
+- Id
+- Nome
+- Status
+- Especie
+- Genero
+- Origem(nome e url de origem)
+- localização(ultima localização em que o personagem foi visto)
+- Imagem do personagem
+- E utilizando a lista episode, calcular a quantidade de episódios em que o personagem apareceu, retornando um numero inteiro
+
+
+Após realizar a extração e parsing de dados, você deverá armazenar esses dados em um Banco de dados, recomendamos o uso de SQL, mas caso não saiba, poderá utilizar o banco de dados de sua preferência. Caso não tenha conhecimento em nenhum banco de dados, leia o desafio alternativo no fim do documento.
+
+Endpoint 2 “/characters”: Deve Realizar a consulta no banco de dados, na tabela aonde inseriu os dados. E retorna-los na função. Com eles, deve-se renderizar a pagina HTML com os dados obtidos
+
+Estrutura do projeto: 
+A Estrutura do projeto foi Minimizada o Mínimo Possível para facilitar o Desafio, Estamos mais interessados em sua lógica de programação, e não a estrutura do projeto em Si. Sendo assim. O projeto contem um arquivo app.py. aonde devem ser criados o servidor flask, os endpoints Solicitados no escopo acima. E a conexão com o Banco de dados. A Pasta Static. É aonde esta o CSS da pagina HTML, e na pasta Templates, esta o arquivo HTML aonde os dados devem ser renderizados na pagina ao ser servida para o front-end
+
+a estrutura citada acima, faz parte de um projeto padrão flask, sendo a pasta static para servir arquivos CSS e JS, e a pasta templates para servir os arquivos HTML.
+
+caso não tenha conhecimento com o JINJA2 ou Flask, e não esteja conseguindo fazer mesmo pesquisando, fale com o Guilherme para que possam ver a possibilidade de utilizar outra linguagem e método para completar o desafio.
+
+
+Desafio caso não saiba Banco de Dados:
+
+    - A Diferença é que a API terá somente um endpoint, “/characters” ele fará a requisição para a API, e fará o mesmo processo citado acima, mas sem o armazenamento em banco de dados, ao invés disso, o JSON processado deve ser retornado na função, e você deve implementar a lógica de renderização desse JSON
